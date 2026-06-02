@@ -1,0 +1,42 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main  # Altere para master se a sua branch principal se chamar master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Código
+        uses: actions/checkout@v4
+
+      # Comando que lê o seu secret API_URL e cria o config.json no servidor
+      - name: Injetar API_URL no config.json
+        run: |
+         echo "{\"apiUrl\": \"${{ secrets.API_URL }}\"}" > config.json
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload dos Arquivos
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy para o GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

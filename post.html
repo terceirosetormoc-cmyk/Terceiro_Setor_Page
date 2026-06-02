@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Terceiro Setor - Detalhes do Projeto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // MESMA PALETA DO SITE PRINCIPAL (Suave & Premium)
+              "portal-bg": "#FCFBF7",
+              "portal-text": "#1E1E1E",
+              "portal-dark": "#121212",
+              "portal-yellow": "#E5A93B",
+              "portal-accent": "#F7E1A0",
+            },
+            borderRadius: {
+              portal: "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-portal-bg text-portal-text antialiased">
+    <header
+      class="sticky top-0 z-50 bg-portal-dark/90 backdrop-blur-md border-b border-white/5 px-6 py-4"
+    >
+      <div class="max-w-4xl mx-auto flex justify-between items-center">
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 bg-portal-yellow text-portal-dark rounded-full flex items-center justify-center font-black shadow-md"
+          >
+            NV
+          </div>
+          <a
+            href="index.html"
+            class="text-xl font-bold text-white tracking-tight"
+          >
+            Projeto <span class="text-portal-yellow">Site</span>
+          </a>
+        </div>
+        <a
+          href="index.html"
+          class="text-xs font-bold uppercase tracking-wider text-white/80 hover:text-portal-yellow transition flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full border border-white/10"
+        >
+          <i class="fa-solid fa-arrow-left"></i> Voltar ao início
+        </a>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-16">
+      <div
+        id="loading-state"
+        class="flex flex-col items-center justify-center py-32"
+      >
+        <div
+          class="w-10 h-10 border-4 border-portal-accent border-t-portal-yellow rounded-full animate-spin"
+        ></div>
+        <p
+          class="mt-4 font-bold text-sm uppercase tracking-widest text-portal-text/40"
+        >
+          Carregando história...
+        </p>
+      </div>
+
+      <article id="projeto-content" class="hidden space-y-8">
+        <header class="space-y-4">
+          <span
+            id="p-categoria"
+            class="inline-block bg-portal-yellow/20 text-portal-dark text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest border border-portal-yellow/30"
+          ></span>
+
+          <h1
+            id="p-titulo"
+            class="text-4xl md:text-5xl font-extrabold text-portal-dark tracking-tight leading-tight"
+          ></h1>
+          <div class="h-1 w-20 bg-portal-yellow rounded-full"></div>
+        </header>
+
+        <div
+          class="overflow-hidden rounded-portal shadow-xl border border-portal-text/5 bg-portal-accent/10"
+        >
+          <img
+            id="p-imagem"
+            src=""
+            alt=""
+            class="w-full h-[300px] md:h-[500px] object-cover hover:scale-[1.02] transition-transform duration-500"
+          />
+        </div>
+
+        <div
+          id="p-descricao"
+          class="text-lg md:text-xl leading-relaxed text-portal-text/90 whitespace-pre-line font-normal tracking-wide max-w-none pt-4"
+        ></div>
+
+        <section
+          class="mt-16 p-8 bg-portal-dark text-white rounded-portal shadow-lg relative overflow-hidden"
+        >
+          <div class="absolute top-0 left-0 h-full w-2 bg-portal-yellow"></div>
+
+          <div
+            class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6"
+          >
+            <div>
+              <h3 class="text-xl font-bold text-white uppercase tracking-tight">
+                O que achou desse projeto?
+              </h3>
+              <p class="text-white/60 text-sm mt-1">
+                Ajude a espalhar o impacto social das ações de Montes Claros
+                compartilhando com seus amigos.
+              </p>
+            </div>
+
+            <div>
+              <button
+                id="btn-share"
+                class="w-full md:w-auto bg-portal-yellow text-portal-dark px-6 py-3.5 rounded-full font-bold text-sm uppercase tracking-wider hover:bg-white hover:scale-105 transition-all shadow-md flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-share-nodes"></i> Compartilhar
+              </button>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer
+      class="bg-portal-dark text-white/60 py-12 px-6 text-center text-sm font-medium border-t border-white/5 mt-20"
+    >
+      <p>© 2026 Portal Projeto Site. Todos os direitos reservados.</p>
+      <p class="text-portal-yellow/50 text-xs mt-2 font-normal">
+        Desenvolvido com foco em impacto social • Montes Claros
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

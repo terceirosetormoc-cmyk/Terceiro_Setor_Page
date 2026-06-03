@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coordenadoria de Apoio ao Terceiro Setor - Montes Claros</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap");
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-50 text-zinc-900">
+    <!-- Navegação -->
+    <nav class="bg-black text-white py-4 px-6 sticky top-0 z-50 shadow-xl">
+      <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-black tracking-tighter uppercase italic">
+          Terceiro Setor - <span class="text-yellow-500">MOC</span>
+        </h1>
+        <div
+          class="hidden md:flex space-x-8 font-bold uppercase text-sm tracking-widest"
+        >
+          <a href="#sobre" class="hover:text-yellow-500 transition">Sobre</a>
+          <a href="#projetos" class="hover:text-yellow-500 transition"
+            >Projetos</a
+          >
+          <a href="#contato" class="hover:text-yellow-500 transition"
+            >Contato</a
+          >
+        </div>
+        <button
+          class="bg-yellow-500 text-black px-6 py-2 font-black uppercase text-sm hover:bg-yellow-400 transition"
+        >
+          Doe Agora
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="relative h-[80vh] flex items-center justify-center bg-zinc-900 overflow-hidden"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1529390079861-591de354faf5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+        class="absolute inset-0 w-full h-full object-cover opacity-40"
+        alt="Comunidade"
+      />
+      <div class="relative z-10 text-center px-4">
+        <h2
+          class="text-5xl md:text-8xl font-black text-white uppercase leading-none"
+        >
+          Fornecendo apoio ao <br /><span class="text-yellow-500"
+            >Terceiro Setor</span
+          >
+        </h2>
+        <p
+          class="text-white mt-6 max-w-xl mx-auto text-lg md:text-xl font-light"
+        >
+          Potencializando talentos, transformando realidades e construindo
+          pontes.
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-16">
+      <!-- Seção de Projetos (Postagem) -->
+      <section id="projetos" class="mb-24">
+        <div id="grid-projetos" class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Mensagem de carregamento inicial -->
+          <div id="loader" class="col-span-full text-center py-20">
+            <p
+              class="text-2xl font-black uppercase animate-pulse text-zinc-400"
+            >
+              Buscando dados da comunidade...
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção de Contato -->
+      <section
+        id="contato"
+        class="bg-black text-white p-8 md:p-16 rounded-none relative"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 class="text-5xl font-black uppercase italic mb-6">
+              Fale Conosco
+            </h3>
+            <p class="text-zinc-400 text-lg mb-8">
+              Dúvidas, parcerias ou quer ser um voluntário? <br />Deixe sua
+              mensagem e nossa equipe entrará em contato.
+            </p>
+            <div class="space-y-4 font-bold uppercase text-sm">
+              <p>
+                <i class="fas fa-map-marker-alt text-yellow-500 mr-2"></i>
+                Montes Claros. MG
+              </p>
+              <p>
+                <i class="fas fa-phone text-yellow-500 mr-2"></i> (21) 9999-9999
+              </p>
+              <p>
+                <i class="fas fa-envelope text-yellow-500 mr-2"></i>
+                contato@nossavoz.org.br
+              </p>
+            </div>
+          </div>
+
+          <form
+            class="bg-zinc-100 p-8 text-black space-y-4 border-l-8 border-yellow-500"
+          >
+            <div>
+              <label class="block text-xs font-black uppercase mb-1"
+                >Seu Nome</label
+              >
+              <input
+                type="text"
+                class="w-full bg-white border border-zinc-300 p-3 focus:border-black outline-none"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-black uppercase mb-1"
+                >E-mail</label
+              >
+              <input
+                type="email"
+                class="w-full bg-white border border-zinc-300 p-3 focus:border-black outline-none"
+                required
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-black uppercase mb-1"
+                >Mensagem</label
+              >
+              <textarea
+                class="w-full bg-white border border-zinc-300 p-3 h-32 focus:border-black outline-none"
+                required
+              ></textarea>
+            </div>
+            <button
+              class="bg-black text-white w-full py-4 font-black uppercase tracking-widest hover:bg-yellow-500 hover:text-black transition-colors"
+            >
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Modal de Acervo -->
+   <div id="modal-acervo" class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4">
+      <!-- Fundo escuro (Overlay) -->
+     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="fecharModal()"></div>
+
+      <!-- Conteúdo do Modal -->
+    <div class="relative bg-white border-4 border-black w-full max-w-2xl max-h-[90vh] overflow-y-auto z-10 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
+        <!-- Cabeçalho do Modal -->
+        <div
+          class="sticky top-0 bg-black text-white p-6 flex justify-between items-center z-10"
+        >
+          <h2 class="text-3xl font-black uppercase italic">
+            Acervo <span class="text-yellow-500">Completo</span>
+          </h2>
+          <button
+            onclick="fecharModal()"
+            class="text-white hover:text-yellow-500 text-4xl font-black"
+          >
+            &times;
+          </button>
+        </div>
+
+        <!-- Grid de Projetos dentro do Modal -->
+        <div id="grid-acervo" class="p-6 md:p-10 flex flex-col gap-4">
+          <!-- Os itens da lista entrarão aqui -->
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="bg-zinc-950 text-zinc-500 py-12 px-6 border-t border-zinc-800"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left"
+      >
+        <div>
+          <p class="font-bold text-zinc-300">
+            © 2024 Portal NossaVoz. Baseado em impacto social.
+          </p>
+          <p class="text-sm">Desenvolvido para transformar realidades.</p>
+        </div>
+        <div class="flex space-x-6 mt-6 md:mt-0 text-2xl">
+          <a href="#" class="hover:text-yellow-500"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="hover:text-yellow-500"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="#" class="hover:text-yellow-500"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+
+
+</html>

@@ -1,7 +1,7 @@
 // Alterado: Começa vazia para não expor seus dados no histórico do GitHub
 let URL_BASE = "";
 
-// --- INICIALIZAÇÃO *****ÍNCRONA ---
+// --- INICIALIZAÇÃO ASSÍNCRONA ---
 async function iniciar() {
   try {
     // 1. O script tenta ler o arquivo injetado pela automação

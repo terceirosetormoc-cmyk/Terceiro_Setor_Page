@@ -1,22 +1,21 @@
-// Alterado: Começa vazia para não expor seus dados no histórico do GitHub
 let URL_BASE = "";
 
 // --- INICIALIZAÇÃO ASSÍNCRONA ---
 async function iniciar() {
   try {
-    // 1. O script tenta ler o arquivo injetado pela automação
+    // 1. Busca o arquivo de configuração gerado dinamicamente pelo GitHub Actions
     const resConfig = await fetch('config.json');
     const config = await resConfig.json();
     
-    // 2. Alimenta a variável global
+    // 2. Alimenta a URL base com o valor que veio do arquivo protegido
     URL_BASE = config.apiUrl;
 
-    // 3. Monta as URLs das abas dinamicamente
+    // 3. Monta os endpoints dinamicamente
     const URL_POSTAGENS = `${URL_BASE}?aba=Postagens`;
     const URL_AGENDA = `${URL_BASE}?aba=Agenda`;
     const URL_PARCEIROS = `${URL_BASE}?aba=Parceiros`;
 
-    // 4. Dispara as requisições paralelas para o Google Apps Script
+    // 4. Executa os fetches principais normalmente
     const [resPostagens, resAgenda, resParceiros] = await Promise.all([
       fetch(URL_POSTAGENS),
       fetch(URL_AGENDA),

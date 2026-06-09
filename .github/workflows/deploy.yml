@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     branches:
-      - main  # Altere para master se a sua branch principal se chamar master
+      - main  # Se a sua branch principal se chamar 'master', mude aqui para master
 
 permissions:
   contents: read
@@ -24,10 +24,10 @@ jobs:
       - name: Checkout Código
         uses: actions/checkout@v4
 
-      # Comando que lê o seu secret API_URL e cria o config.json no servidor
+      # Este passo cria o config.json e injeta o segredo que você salvou no Passo 2
       - name: Injetar API_URL no config.json
         run: |
-         echo "{\"apiUrl\": \"${{ secrets.API_URL }}\"}" > config.json
+          echo "{\"apiUrl\": \"${{ secrets.API_URL }}\"}" > config.json
 
       - name: Configurar Pages
         uses: actions/configure-pages@v4
